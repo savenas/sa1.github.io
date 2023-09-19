@@ -174,131 +174,130 @@ gtag('consent', 'default', {
 </div>
 </div>
 
-<script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> 
-<script src="js/scripts.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script> 
+    <script src="js/scripts.js"></script>
 
-<link href="css/cookieconsent.css" rel="stylesheet" />
-<script defer src="js/cookieconsent.js"></script>
+    <link href="css/cookieconsent.css" rel="stylesheet" />
+    <script defer src="js/cookieconsent.js"></script>
 
-<script>
-  function consentGranted() {
-    gtag('consent', 'update', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'granted'
-    });
-}
-function consentDenied() {
-    gtag('consent', 'update', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied'
-    });
-}
+    <script>
+      function consentGranted() {
+        gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'granted'
+        });
+    }
+    function consentDenied() {
+        gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+        });
+    }
 </script>
 
 <script>
-    window.addEventListener('load', function () {
-        // obtain cookieconsent plugin
-        var cookieconsent = initCookieConsent();
+            window.addEventListener('load', function () {
+// obtain cookieconsent plugin
+                var cookieconsent = initCookieConsent();
 
-        // run plugin with config object
+// run plugin with config object
 
-        cookieconsent.run({
-            delay: 3500,
-            autorun: true,
-            current_lang: 'en',
-            theme_css: '/css/cookieconsent.css',
-            autoclear_cookies: true,
-            page_scripts: true,
-            
+                cookieconsent.run({
+                    delay: 3500,
+                    autorun: true,
+                    current_lang: 'en',
+                    theme_css: '/css/cookieconsent.css',
+                    autoclear_cookies: true,
+                    page_scripts: true,
+                    
 
-            onAccept: function (cookie) {
+                    onAccept: function (cookie) {
 
-            },
-
-            onChange: function (cookie, changed_preferences) {
-                // ... cookieconsent preferences were changed
-                consentDenied();                 
-                cookieconsent.eraseCookies(['cc_cookie','_ga','_ga_5XX0MYJB1K']);
-
-            },
-
-            languages: {
-                en: {
-                    consent_modal: {
-                        title: '<a href="javascript:void(0);" aria-label="Peržiūrėti privatumo politiką" data-cc="c-settings">Privatumo politika</a> ',
-                        description: 'Sveiki, <br> šioje svetainėje įskiepis Googe Analytics prašo Jūsų leidimo sukurti slapukus, ar sutinkate?',
-                        primary_btn: {
-                            text: 'Sutinku',
-                            role: 'accept_all'  //'accept_selected' or 'accept_all'
-                        },
-                        secondary_btn: {
-                            text: 'Ne, tik būtini',
-                            role: 'accept_necessary'   //'settings' or ''
-                        }
                     },
-                    settings_modal: {
-                        title: 'Privatumo politikos nustatymai',
-                        save_settings_btn: 'Užsaugoti pakeitimus',
-                        accept_all_btn: 'Priimti visus',
-                        reject_all_btn: 'Išvalyti',       // optional, [v.2.5.0 +]
-                        cookie_table_headers: [
-                            {col1: 'Name'},
-                            {col2: 'Domain'},
-                            {col3: 'Expiration'},
-                            {col5: 'Type'}
-                            ],
-                        blocks: [
-                        {
-                            title: 'Slapukų naudojimas',
-                            description: 'Lankytojų srautui analizuoti bus naudojamas įskiepis Google Analytics. Nuasmeninti statistiniai duomenys bus matomi Google sistemoje kaip svetainės lankomumo ataskaita. Google Analytics turi sukurti slapukus "cookies", kurie bus laikomi vartotojų naršyklėje. Šią informaciją bus laikoma Google. Jos privatumo politika prieinama: http://www.google.com/privacypolicy.html'
-                        }, {
-                            title: 'Būtini slapukai',
-                            description: 'Šie slapukai skirti atpažinti ar lankytojas sutiko su Google Analytics įrankio prašymu. Taip užtikrinamas pasirodymas naujiems arba nerodymas sugrįžtantiems lankytojams',
-                            toggle: {
-                                value: 'necessary',
-                                enabled: true,
-                                readonly: true
-                            }
 
-                        }, 
-                        {
-                            title: 'Google Analytics slapukai',
-                            description: 'Šie slapukai skirti Google identifikuoti naršyklės sesiją, kurios metu bus renkami duomenys apie lankytoju veiksmus susijusius su svetainės naršymu: kuriuose polapiuose lankomasi ir kurias nuorodas spaudžiamos. Visi duomenys yra anonimiški ir negali būti naudojami tapatybei nustatyti.',
-                            toggle: {
-                                value: 'analytics',
-                                enabled: false,
-                                readonly: false,
-                                reload: 'on_disable'
+                    onChange: function (cookie, changed_preferences) {
+// ... cookieconsent preferences were changed
+                        consentDenied();                 
+                        cookieconsent.eraseCookies(['cc_cookie','_ga','_ga_MM3XFZX1JX']);
 
-                            },
-                            cookie_table: [
-                            {
-                                col1: '_ga',
-                                col2: 'google.com',
-                                col3: '6 months',
-                                col5: 'Permanent cookie',
-                                is_regex: true
-                            },
-                            {
-                                col1: '_ga_5XX0MYJB1K',
-                                col2: 'google.com',
-                                col3: '6 months',
-                                col5: 'Permanent cookie'
-                            }
-                            ]
-                        }, {
-                            title: 'Pašalinti slapukus', 
-                            description: 'Pašalinti Google Analytics sukurtus slapukus spauskite "Išvalyti".  Kiti klausimai elektroniniu paštu.</a>',
-                        }
-                        ]
-                    }
-                }
+                    },
+
+                    languages: {
+                        en: {
+                            consent_modal: {
+                                title: '<a href="javascript:void(0);" aria-label="Peržiūrėti privatumo politiką" data-cc="c-settings">Privatumo politika</a> ',
+                                description: 'Sveiki, <br> šioje svetainėje įskiepis Googe Analytics prašo Jūsų leidimo sukurti slapukus, ar sutinkate?',
+                                primary_btn: {
+                                    text: 'Sutinku',
+            role: 'accept_all'  //'accept_selected' or 'accept_all'
+        },
+        secondary_btn: {
+            text: 'Ne, tik būtini',
+            role: 'accept_necessary'   //'settings' or ''
+        }
+    },
+    settings_modal: {
+        title: 'Privatumo politikos nustatymai',
+        save_settings_btn: 'Užsaugoti pakeitimus',
+        accept_all_btn: 'Priimti visus',
+        reject_all_btn: 'Išvalyti',       // optional, [v.2.5.0 +]
+        cookie_table_headers: [
+            {col1: 'Name'},
+            {col2: 'Domain'},
+            {col3: 'Expiration'},
+            {col5: 'Type'}
+            ],
+        blocks: [
+        {
+            title: 'Slapukų naudojimas',
+            description: 'Lankytojų srautui analizuoti bus naudojamas įskiepis Google Analytics. Nuasmeninti statistiniai duomenys bus matomi Google sistemoje kaip svetainės lankomumo ataskaita. Google Analytics turi sukurti slapukus "cookies", kurie bus laikomi vartotojų naršyklėje. Šią informaciją bus laikoma Google. Jos privatumo politika prieinama: https://www.google.com/privacypolicy.html'
+        }, {
+            title: 'Būtini slapukai',
+            description: 'Šie slapukai skirti atpažinti ar lankytojas sutiko su Google Analytics įrankio prašymu. Taip užtikrinamas pasirodymas naujiems arba nerodymas sugrįžtantiems lankytojams',
+            toggle: {
+                value: 'necessary',
+                enabled: true,
+                readonly: true
             }
-        });
+
+        }, 
+        {
+            title: 'Google Analytics slapukai',
+            description: 'Šie slapukai skirti Google identifikuoti naršyklės sesiją, kurios metu bus renkami duomenys apie lankytoju veiksmus susijusius su svetainės naršymu: kuriuose polapiuose lankomasi ir kurias nuorodas spaudžiamos. Visi duomenys yra anonimiški ir negali būti naudojami tapatybei nustatyti.',
+            toggle: {
+                value: 'analytics',
+                enabled: false,
+                readonly: false,
+                reload: 'on_disable'
+
+            },
+            cookie_table: [
+            {
+                col1: '_ga',
+                col2: 'google.com',
+                col3: '6 months',
+                col5: 'Permanent cookie',
+                is_regex: true
+            },
+            {
+                col1: '_ga_MM3XFZX1JX',
+                col2: 'google.com',
+                col3: '6 months',
+                col5: 'Permanent cookie'
+            }
+            ]
+        }, {
+            title: 'Pašalinti slapukus', 
+            description: 'Pašalinti Google Analytics sukurtus slapukus spauskite "Išvalyti".  Kiti klausimai elektroniniu paštu.</a>',
+        }
+        ]
+    }
+}
+}
+});
 });
 
 </script>
-
 <script src="js/aos.js"></script>
 <script>
     AOS.init({
